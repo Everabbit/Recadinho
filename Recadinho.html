@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recadinho para você!</title>
+</head>
+<body>
+    <script>
+        var text, name, ver;
+        text = "Ei você!";
+        alert(text);
+        text = "Sim to falando contigo Filho de Deus!";
+        alert(text);
+        ver = prompt("Qual o seu nome abençoado?");
+        while(ver==null || ver==""){
+            ver = prompt("Fala seu nome mano, qual a dificuldade??");
+        }
+        name = ver;
+        text = "Beleza "+name+"?";
+        alert(text);
+        ver = prompt("Tenho um negócio legal pra te falar "+name+", cê quer saber?\n\nDigite S para \"sim\", ou N para \"não\"").toUpperCase();
+        while(ver != "S" && ver != "N"){
+            ver = prompt("Vamo lá "+name+", não dificulta as coisas!\n\nDigite S para \"sim\", ou N para \"não\"").toUpperCase();
+        }
+        if(ver == "S"){
+            text = "Sabia que você ia querer ouvir "+name+"!";
+            alert(text);
+        }else if(ver == "N"){
+            text = "Você gosta de complicar as coisas em "+name+"?";
+            alert(text);
+            text = "Não importe, vou falar igual 😜";
+            alert(text);
+        }
+        text = "Deus te ama "+name+"!";
+        alert(text);
+        text = "E nunca, NUNCA vai deixar de te amar!";
+        alert(text);
+        </script>
+</body>
+</html>
