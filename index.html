@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Recadinho para você!</title>
 </head>
 <body>
@@ -175,9 +177,27 @@
         }
 
         if(pontos == 0){
-            alert("Tente denovo na próxima vez... A palavra era: \n\n"+palavraini);
+            alert("Ah você perdeu, mas tudo bem... A palavra era: \n\n"+palavraini);
         }else{
-            alert("Parabéns Você Venceu!\n\n"+palavraini);
+            alert("Parabéns você acertou!\n\n"+palavraini);
+        }
+
+        text = "Sabe o que essa palavra me lembra?";
+        alert(text);
+        ver = prompt("Aquele acontecimento de 2000 anos atrás!\n\n1- Qual?\n2- Ah esse eu sei!");
+        while(ver != 1 && ver != 2){
+            ver = prompt("Aquele acontecimento de 2000 anos atrás!\n\n1- Qual?\n2- Ah esse eu sei!");
+        }
+        if(ver == 1){
+            text = "Quando um homem, que era Deus, pisou na terra, e salvou toda a humanidade!";
+            alert(text);
+            text = "Por cada um, ele morreu em uma cruz, abriu o céu, finalmente as almas podem descançar!";
+            alert(text);
+        }else if(ver == 2){
+            text = "Claro que sabe! O Homem que mudou tudo, aquele que era Deus e Homem ao mesmo tempo!";
+            alert(text);
+            text = "Aquele Jesus que morreu em uma cruz, e sofreu muitas dores para poder nos dar o céu!";
+            alert(text);
         }
         </script>
 </body>
