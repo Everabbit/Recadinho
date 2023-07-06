@@ -8,24 +8,26 @@
 </head>
 <body>
     <script>
-        var text, name, ver;
+        var text, name, ver, age;
+        age = 0;
+        
         text = "Ei você!";
         alert(text);
-        text = "Sim to falando contigo Filho de Deus!";
+        text = "Sim to falando contigo!";
         alert(text);
-        ver = prompt("Qual o seu nome abençoado?");
+        ver = prompt("Qual o seu nome my friend?");
         while(ver==null || ver==""){
             ver = prompt("Fala seu nome mano, qual a dificuldade??");
         }
         name = ver;
-        text = "Beleza "+name+"?";
+        text = "Tudo bem "+name+"?";
         alert(text);
         ver = prompt("Tenho um negócio legal pra te falar "+name+", cê quer saber?\n\nDigite S para \"sim\", ou N para \"não\"").toUpperCase();
         while(ver != "S" && ver != "N"){
             ver = prompt("Vamo lá "+name+", não dificulta as coisas!\n\nDigite S para \"sim\", ou N para \"não\"").toUpperCase();
         }
         if(ver == "S"){
-            text = "Sabia que você ia querer ouvir "+name+"!";
+            text = "Sabia que você ia querer ouvir!";
             alert(text);
         }else if(ver == "N"){
             text = "Você gosta de complicar as coisas em "+name+"?";
@@ -37,6 +39,55 @@
         alert(text);
         text = "E nunca, NUNCA vai deixar de te amar!";
         alert(text);
+        text = "E mesmo com a sua idade...";
+        alert(text);
+        ver = prompt("Aliás... Quantos anos você tem mesmo?").toUpperCase();
+        while(isNaN(ver+age) || ver<=0){
+            ver = prompt("Sério, só digita o número da sua idade...").toUpperCase();
+        }
+        age = Number(age+ver);
+        text = "Isso! Mesmo você tendo "+age+" anos, Ele te ama!";
+        alert(text);
+
+        if(age>15){
+            text = "Mas à medida que crescemos, podemos cometer erros e fazer escolhas erradas.";
+            alert(text);
+            text = "Deus entende que somos seres humanos imperfeitos e que cometemos pecados.";
+            alert(text);
+            ver = prompt("Calma, não precisa abandonar tudo!\n\n1- Socorro Deussss\n2- Ok ok\n3- Sinceramente, estou cansado...\n\nObs: Responda com o Número!");
+            while(isNaN(ver)){
+                ver = prompt("Calma, responda com o Número!\n\n1- Socorro Deussss\n2- Ok ok\n3- Sinceramente, estou cansado...");
+            }
+        }else{
+            text = "Durante nossa jornada, podemos cometer erros e fazer coisas que não agradam a Deus.";
+            alert(text);
+            text = "Mas não precisa se desesperar! \n\n(Só um pouquinho hehehe) ";
+            alert(text);
+            text = "Pecar significa apenas fazer coisas erradas aos olhos de Deus.";
+            alert(text);
+            ver = prompt("Tudo bem, não é o fim do mundo!\n\n1- Socorro Deussss\n2- Tudo bem tio...\n3- Bem, está muito dificil...\n\nObs: Responda com o Número!");
+            while(ver != 1 && ver != 2 && ver != 3){
+                ver = prompt("Calma, responda com o Número!\n\n1- Socorro Deussss\n2- Tudo bem tio...\n3- Bem, está muito dificil...");
+            }
+        }
+        if(ver == 1){
+            text = "Não se preocupe, " + name + "! Deus está sempre pronto para nos ajudar e nos dar forças.";
+            alert(text);
+            text = "Quando nos voltamos para Ele em busca de ajuda, Ele nos guia e nos dá a sabedoria necessária.";
+            alert(text);
+        }else if(ver == 2){
+            text = "Mas ainda não acabou, tenta não dormir aí " + name + ".";
+            alert(text);
+            text = "Lembre-se de que Deus está sempre ao seu lado!";
+            alert(text);
+        }else if(ver == 3){
+            text = "Eu entendo que às vezes enfrentamos momentos difíceis e desafiadores.";
+            alert(text);
+            text = "Mas saiba que Deus nunca nos abandona, mesmo nos momentos mais difíceis.";
+            alert(text);
+            text = "Ele é o nosso refúgio e fortaleza, e podemos encontrar consolo e força Nele.";
+            alert(text);
+        }
         </script>
 </body>
 </html>
