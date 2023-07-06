@@ -88,6 +88,94 @@
             text = "Ele é o nosso refúgio e fortaleza, e podemos encontrar consolo e força Nele.";
             alert(text);
         }
+
+        //Roubando o Wendel do passado
+        var letra, palavraini, palavrafin, pontos, frase, pos, usadas, count, ini, fin, rand;
+
+        palavrafin = "";
+        usadas = "";
+        pontos = 6;
+        count = 0;
+        pos = -1;
+
+        rand = Math.ceil(Math.random()*100);
+        if(rand == 1){
+            palavraini = "SACRIFICIO";
+        }else if(rand == 2){
+            palavraini = "JESUS";
+        }else if(rand == 3){
+            palavraini = "REMISSAO";
+        }else if(rand == 4){
+            palavraini = "CRUZ";
+        }else if(rand == 5){
+            palavraini = "UNIAO";
+        }else if(rand == 6){
+            palavraini = "FLAGELO";
+        }
+
+        for(var i=0;i<palavraini.length;i++){
+            palavrafin += "_ ";
+        }
+
+        while(pontos>0 && palavrafin.indexOf("_") != -1){
+            switch(pontos){
+                case 6:
+                    frase = usadas+"\n\nQual a letra que vai chutar?\n\n|______________|\n|          |\n|         ---\n|\n|\n|\n|\n|";
+                    break;
+                case 5:
+                    frase = usadas+"\n\nQual a letra que vai chutar?\n\n|______________|\n|          |\n|         ---\n|          O\n|\n|\n|\n|";
+                    break;
+                case 4:
+                    frase = usadas+"\n\nQual a letra que vai chutar?\n\n|______________|\n|          |\n|         ---\n|          O\n|          |\n|          |\n|\n|";
+                    break;
+                case 3:
+                    frase = usadas+"\n\nQual a letra que vai chutar?\n\n|______________|\n|          |\n|         ---\n|          O\n|         /|\n|          |\n|\n|";
+                    break;
+                case 2:
+                    frase = usadas+"\n\nQual a letra que vai chutar?\n\n|______________|\n|          |\n|         ---\n|          O\n|         /|\\\n|          |\n|\n|";
+                    break;
+                case 1:
+                    frase = usadas+"\n\nQual a letra que vai chutar?\n\n|______________|\n|          |\n|         ---\n|          O\n|         /|\\\n|          |\n|         /\n|";
+                    break;
+            }
+            
+            letra = prompt(frase+"\n\n"+palavrafin).toUpperCase();
+            
+            if(letra.length>1){
+                alert("Digite uma letra apenas por favor!");
+            }else if(letra.charCodeAt(0) < 65 ||letra.charCodeAt(0) > 90){
+                alert("Digite uma letra valida por favor!");
+            }else if(usadas.indexOf(letra) != -1){
+                alert("Você já usou essa letra amigão!");
+            }else{
+                if(palavraini.indexOf(letra) != -1){
+                    pos = -1;
+                    while(palavraini.indexOf(letra, pos+1) != -1){
+                        pos = palavraini.indexOf(letra, pos+1);
+                        
+                        ini = palavrafin.slice(0,pos*2);
+                        fin = palavrafin.slice((pos*2)+1,palavrafin.length);
+                        
+                        palavrafin = ini+letra+fin;
+                        
+                        if(usadas.indexOf(letra) == -1){
+                            usadas += letra+"-";
+                        }
+                    }
+                    alert("Aee acertou\n\n"+palavrafin);
+                }else{
+                    alert("Meio que você acabou errando...");
+                    usadas += letra+"-";
+                    pontos -= 1;
+                }
+            }
+        }
+
+        if(pontos == 0){
+            alert("Tente denovo na próxima vez... A palavra era: \n\n"+palavraini);
+        }else{
+            alert("Parabéns Você Venceu!\n\n"+palavraini);
+        }
         </script>
 </body>
 </html>
